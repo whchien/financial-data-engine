@@ -3,73 +3,70 @@
 This project shows how to deploy a distributed web scraper for financial data to enhance efficiency, use a relational database for storage, and implement comprehensive monitoring.
 
 ## Key Features
-- Distributed Systems: Develop systems using RabbitMQ and Celery for scalable web scraping. 
-- Docker Deployment: Use Docker for streamlined setup and deployment, monitored with Protainer.
-- Database Management: Efficiently store and manage data using MySQL.
-- Monitoring Systems: Implement Grafana, Prometheus for big data monitoring.
-- Dashboard Creation: Build Grafana dashboards for data status monitoring and anomaly detection.
+1. Distributed Systems: Develop systems using RabbitMQ and Celery for scalable web scraping. 
+2. Docker Deployment: Use Docker for streamlined setup and deployment, monitored with Protainer. 
+3. Database: Efficiently store and manage data using MySQL. 
+4. Monitoring: Implement Grafana, Prometheus for big data monitoring. 
+5. Dashboard: Build Grafana dashboards for data status monitoring and anomaly detection.
 
 
-### Commands
+## Quickstart
 
-```sh
-make init-swarm
+Follow these steps to set up and run the distributed web scraper:
+
+### 1. Initial set-up
+Clone the repo:
 ```
-#### Start RabbitMQ
-```sh
-make deploy-rabbitmq
+git clone https://github.com/whchien/financial-data-engine.git 
 ```
-
-#### Install packages
-```sh
+Install the necessary dependencies:
+```
 make install-package
 ```
+Initiate docker swarm
+```
+make init-swarm
+```
 
-#### Create network
-```sh
+Create the Docker network for service communication:
+```
 make create-network
 ```
 
-#### Create MySQL volume
-```sh
-make create-mysql-volume
+### 2. Start Essential Services
+
+Deploy RabbitMQ to handle message queuing:
+```
+make deploy-rabbitmq
 ```
 
-#### Start MySQL
-```sh
+Deploy the MySQL service for data storage:
+```
 make deploy-mysql
 ```
 
-#### Start Celery - TWSE
-```sh
+Set up the MySQL volume for data persistence:
+```
+make create-mysql-volume
+```
+
+
+### 3. Start Celery Workers
+
+Deploy the Celery worker for TWSE tasks for example:
+```
 make run-worker-twse
 ```
 
-#### Start Celery - TPEX
-```sh
-make run-worker-tpex
+### 4. Fetch Financial Data
+Send a task to fetch Taiwan futures daily data:
 ```
-
-#### Start Celery - TAIFEX
-```sh
-make run-worker-taifex
-```
-
-#### Send Taiwan stock price task
-```sh
-make send-taiwan-stock-price-task
-```
-
-#### Send Taiwan futures daily task
-```sh
 make send-taiwan-futures-daily-task
 ```
 
-#### Generate dev environment variables
-```sh
-make gen-dev-env-variable
-```
+
+By following these steps, you will set up a distributed scraping system capable of efficiently collecting financial data, utilizing RabbitMQ for task queuing, MySQL for data storage, and Celery for task execution.
 
 
 ### Credits
-This project is inspired by the repo: https://github.com/FinMind/FinMindBook# financial-data-engine
+This project is inspired by this [repo](https://github.com/FinMind/FinMindBook).
