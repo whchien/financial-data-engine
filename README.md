@@ -69,4 +69,4 @@ make gen-dev-env-variable
 
 
 ### Credits
-This project is inspired by the repo: https://github.com/FinMind/FinMindBook
+This project is inspired by the repo: https://github.com/FinMind/FinMindBook# financial-data-engine
