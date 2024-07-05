@@ -8,7 +8,7 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="financialdata",  # Required
+    name="fin_engine",  # Required
     version="1.0.1",  # Required
     description="financial mining",  # Optional
     long_description=long_description,  # Optional

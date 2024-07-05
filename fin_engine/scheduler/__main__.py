@@ -3,8 +3,8 @@ import time
 from functools import partial
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from financialdata.producer import update
-from financialdata.scheduler.crawler_data import save_dataset_count_daily
+from fin_engine.producer import update
+from fin_engine.scheduler.scrape_data import save_dataset_count_daily
 from loguru import logger
 
 

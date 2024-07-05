@@ -1,18 +1,23 @@
 FROM continuumio/miniconda3:4.3.27
 
+# Update apt-get
 RUN apt-get update
 
+# Create a directory for the project
 RUN mkdir /FinMindProject
+
+# Copy the current directory contents into the container at /FinMindProject
 COPY . /FinMindProject/
+
+# Set the working directory to /FinMindProject
 WORKDIR /FinMindProject/
 
-# 在此 image, 使用 staging 環境變數
-# 如果要用於 production 的 docker image
-# 將此改成 VERSION=RELEASE 即可
+# Set environment to staging. For production, change this to VERSION=RELEASE
 RUN VERSION=STAGING python genenv.py
 
-# install package
+# Install pipenv and sync dependencies
 RUN pip install pipenv && \
     pipenv sync
 
+# Default command to run
 CMD ["/bin/bash"]

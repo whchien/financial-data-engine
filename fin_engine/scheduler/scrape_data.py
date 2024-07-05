@@ -4,8 +4,8 @@ import pandas as pd
 
 from loguru import logger
 
-from financialdata.db import router, query
-from financialdata.db.db import upload_data, commit
+from fin_engine.db import router, query
+from fin_engine.db.db import upload_data, commit
 
 
 def get_now() -> datetime.datetime:

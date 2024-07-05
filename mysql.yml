@@ -15,7 +15,6 @@ services:
           MYSQL_ROOT_PASSWORD: test
       volumes:
           - mysql:/var/lib/mysql
-      # swarm 設定
       networks:
           - my_network
 
@@ -34,13 +33,11 @@ services:
           PMA_HOST: mysql
       depends_on:
         - mysql
-      # swarm 設定
       networks:
           - my_network
 
 networks:
   my_network:
-    # 加入已經存在的網路
     external: true
 
 volumes:

@@ -1,4 +1,3 @@
--- Monitor 指標一
 SELECT B.dataset_name,
     B.date,
     B.count
@@ -19,7 +18,6 @@ LEFT JOIN(
 ON A.dataset_name=B.dataset_name
 AND A.max_monitor_query_time=B.monitor_query_time
 
--- Monitor 指標二
 SELECT dataset_name,
     monitor_query_time as time_sec,
     count

@@ -1,35 +1,72 @@
-# Class
+# Financial Data Engine
 
-#### 啟動 rabbitmq
-    make deploy-rabbitmq
+This project shows how to deploy a distributed web scraper for financial data to enhance efficiency, use a relational database for storage, and implement comprehensive monitoring.
 
-#### install package
-    make install-package
+## Key Features
+- Distributed Systems: Develop systems using RabbitMQ and Celery for scalable web scraping. 
+- Docker Deployment: Use Docker for streamlined setup and deployment.
+- Database Management: Efficiently store and manage data using MySQL.
+- Monitoring Systems: Implement Grafana, Prometheus for big data monitoring.
+- Dashboard Creation: Build Grafana dashboards for data status monitoring and anomaly detection.
 
-#### 建立 network
-    make create-network
 
-#### 建立 mysql volume
-    make create-mysql-volume
+### Commands
 
-#### 啟動 mysql
-    make deploy-mysql
+#### Start RabbitMQ
+```sh
+make deploy-rabbitmq
+```
 
-#### 啟動 celery - twse
-    make run-worker-twse
+#### Install packages
+```sh
+make install-package
+```
 
-#### 啟動 celery - tpex
-    make run-worker-tpex
+#### Create network
+```sh
+make create-network
+```
 
-#### 啟動 celery - taifex
-    make run-worker-taifex
+#### Create MySQL volume
+```sh
+make create-mysql-volume
+```
 
-#### sent taiwan-stock-price task
-    make sent-taiwan-stock-price-task
+#### Start MySQL
+```sh
+make deploy-mysql
+```
 
-#### sent taiwan-futures-daily task
-    make sent-taiwan-futures-daily-task
+#### Start Celery - TWSE
+```sh
+make run-worker-twse
+```
 
-#### 建立 dev 環境變數
-    make gen-dev-env-variable
+#### Start Celery - TPEX
+```sh
+make run-worker-tpex
+```
 
+#### Start Celery - TAIFEX
+```sh
+make run-worker-taifex
+```
+
+#### Send Taiwan stock price task
+```sh
+make send-taiwan-stock-price-task
+```
+
+#### Send Taiwan futures daily task
+```sh
+make send-taiwan-futures-daily-task
+```
+
+#### Generate dev environment variables
+```sh
+make gen-dev-env-variable
+```
+
+
+### Credits
+This project is inspired by the repo: https://github.com/FinMind/FinMindBook

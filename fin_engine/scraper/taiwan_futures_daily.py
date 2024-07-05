@@ -101,7 +101,7 @@ def generate_date_parameters(start_date: str, end_date: str) -> typing.List[dict
 
 
 def crawler(parameters: dict) -> pd.DataFrame:
-    """Main crawler function."""
+    """Main scraper function."""
     date = parameters.get("crawler_date", "")
     df = fetch_futures_data(date)
     if df.empty:
