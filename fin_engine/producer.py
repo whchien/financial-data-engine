@@ -5,9 +5,9 @@ from fin_engine.tasks import crawler
 from loguru import logger
 
 
-def update(dataset: str, start_date: str, end_date: str):
+def update(dataset: str, start_date: str, end_date: str) -> None:
     """
-    Update dataset by generating task parameters and sending tasks to the crawler.
+    Update dataset by generating task parameters and sending tasks to the scraper.
 
     Parameters:
     - dataset: Name of the dataset to update.
@@ -15,7 +15,7 @@ def update(dataset: str, start_date: str, end_date: str):
     - end_date: The end date for data retrieval in YYYY-MM-DD format.
     """
     # Import the module and get the parameter list generator function
-    module = importlib.import_module(f"financialdata.crawler.{dataset}")
+    module = importlib.import_module(f"fin_engine.scraper.{dataset}")
     gen_task_parameter_list = getattr(module, "gen_task_paramter_list")
 
     # Generate the list of parameters for the crawling tasks

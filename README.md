@@ -4,7 +4,7 @@ This project shows how to deploy a distributed web scraper for financial data to
 
 ## Key Features
 - Distributed Systems: Develop systems using RabbitMQ and Celery for scalable web scraping. 
-- Docker Deployment: Use Docker for streamlined setup and deployment.
+- Docker Deployment: Use Docker for streamlined setup and deployment, monitored with Protainer.
 - Database Management: Efficiently store and manage data using MySQL.
 - Monitoring Systems: Implement Grafana, Prometheus for big data monitoring.
 - Dashboard Creation: Build Grafana dashboards for data status monitoring and anomaly detection.
@@ -12,6 +12,9 @@ This project shows how to deploy a distributed web scraper for financial data to
 
 ### Commands
 
+```sh
+make init-swarm
+```
 #### Start RabbitMQ
 ```sh
 make deploy-rabbitmq

@@ -1,7 +1,6 @@
 import importlib
 import socket
 import time
-import typing
 
 import pymysql
 from loguru import logger
